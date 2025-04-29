@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageHome"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_140sdp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/meow1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/new_font_title_nerkoone"
+        android:gravity="center"
+        android:textSize="@dimen/_20ssp"
+        android:padding="@dimen/_5sdp"
+        android:text="Cat 1" />
+</LinearLayout>

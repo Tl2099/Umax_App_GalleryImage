@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_praph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="tl209.umax_app_galleryimage.view.FragmentHome"
+        android:label="Home_Fragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFrag_to_likeFrag"
+            app:destination="@+id/likedFragment" />
+        <action
+            android:id="@+id/action_homeFrag_to_showFrag"
+            app:destination="@+id/showFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showFragment"
+        android:name="tl209.umax_app_galleryimage.view.FragmentShow"
+        android:label="Show_Fragment"
+        tools:layout="@layout/fragment_show" />
+    <fragment
+        android:id="@+id/likedFragment"
+        android:name="tl209.umax_app_galleryimage.view.FragmentLiked"
+        android:label="Liked_Fragment"
+        tools:layout="@layout/fragment_liked" />
+
+</navigation>
