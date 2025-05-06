@@ -20,7 +20,14 @@
         android:id="@+id/showFragment"
         android:name="tl209.umax_app_galleryimage.view.FragmentShow"
         android:label="Show_Fragment"
-        tools:layout="@layout/fragment_show" />
+        tools:layout="@layout/fragment_show" >
+        <action
+            android:id="@+id/action_showFrag_to_homeFrag"
+            app:destination="@+id/homeFragment"/>
+        <argument
+            android:name="imgPath"
+            app:argType="string"/>
+    </fragment>
     <fragment
         android:id="@+id/likedFragment"
         android:name="tl209.umax_app_galleryimage.view.FragmentLiked"
