@@ -13,7 +13,7 @@ import java.io.File
 
 class ImageLikedAdapter(
     private val context: Context,
-    private var imageList: List<LikedImage>, // Thay đổi sang LikedImage
+    private var imageList: List<LikedImage>,
 ): RecyclerView.Adapter<ImageLikedAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,13 +29,13 @@ class ImageLikedAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(imageList[position])  // Truyền LikedImage thay vì String
+        holder.bind(imageList[position])
     }
 
     inner class ViewHolder(private val binding: ItemImageHomeBinding): RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(likedImage: LikedImage) {
-            val imgFile = File(likedImage.imagePath)  // Lấy đường dẫn ảnh từ LikedImage
+            val imgFile = File(likedImage.imagePath)
             if (imgFile.exists()) {
                 Glide.with(context).load(imgFile).placeholder(R.drawable.meow1).into(binding.imageHome)
             }

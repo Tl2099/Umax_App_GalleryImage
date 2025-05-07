@@ -1,6 +1,7 @@
 package tl209.umax_app_galleryimage.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +11,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import tl209.umax_app_galleryimage.adapter.ImageLikedAdapter
 import tl209.umax_app_galleryimage.databinding.FragmentLikedBinding
 import tl209.umax_app_galleryimage.viewmodel.LikedImageViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FragmentLiked: Fragment() {
     private lateinit var binding: FragmentLikedBinding
-    private val viewModel: LikedImageViewModel by viewModels()
+    private val viewModel: LikedImageViewModel by viewModel()
     private lateinit var imageLikedAdapter: ImageLikedAdapter
 
     override fun onCreateView(
@@ -33,7 +35,7 @@ class FragmentLiked: Fragment() {
 
     private fun observeLikedImages() {
         viewModel.likedImages.observe(viewLifecycleOwner) { likedImages ->
-            // Cập nhật adapter với danh sách ảnh đã like
+            Log.d("Liked", "$likedImages")
             imageLikedAdapter = ImageLikedAdapter(requireContext(), likedImages)
             binding.recycleView.adapter = imageLikedAdapter
         }
